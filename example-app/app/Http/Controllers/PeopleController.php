@@ -7,14 +7,14 @@ use App\Models\People;
 
 class PeopleController extends Controller
 {
-    public function createOne(Request $request): \Illuminate\Http\JsonResponse
+    public function createPerson(Request $request): \Illuminate\Http\JsonResponse
     {
         $person = People::create($request->all());
 
         return response()->json($person);
     }
 
-    public function getOne(int $id): \Illuminate\Http\JsonResponse
+    public function getPerson(int $id): \Illuminate\Http\JsonResponse
     {
         $person = People::find($id);
 
@@ -27,7 +27,7 @@ class PeopleController extends Controller
         return response()->json($person);
     }
 
-    public function updateOne(Request $request, $id): \Illuminate\Http\JsonResponse
+    public function updatePerson(Request $request, $id): \Illuminate\Http\JsonResponse
     {
         $person = People::find($id);
 
@@ -42,7 +42,7 @@ class PeopleController extends Controller
         return response()->json($person);
     }
 
-    public function deleteOne($id): \Illuminate\Http\JsonResponse
+    public function deletePerson($id): \Illuminate\Http\JsonResponse
     {
         $person = People::find($id);
 

@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/127.0.0.1/Kafel/50623/people', [PeopleController::class, 'getAll'] );
-Route::post('/127.0.0.1/Kafel/50623/people', [PeopleController::class, 'createOne'] );
-Route::put('/127.0.0.1/Kafel/50623/people/{id}', [PeopleController::class, 'updateOne'] );
-Route::get('/127.0.0.1/Kafel/50623/people/{id}', [PeopleController::class, 'getOne'] );
-Route::delete('/127.0.0.1/Kafel/50623/people/{id}', [PeopleController::class, 'deleteOne'] );
+Route::post('/127.0.0.1/Kafel/50623/people', [PeopleController::class, 'createPerson'] );
+Route::put('/127.0.0.1/Kafel/50623/people/{id}', [PeopleController::class, 'updatePerson'] );
+Route::get('/127.0.0.1/Kafel/50623/people/{id}', [PeopleController::class, 'getPerson'] );
+Route::delete('/127.0.0.1/Kafel/50623/people/{id}', [PeopleController::class, 'deletePerson'] );
