@@ -2,22 +2,21 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 
+
 use Faker\Factory as Faker;
+
 
 class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
         // \App\Models\User::factory(10)->create();
 
@@ -26,25 +25,26 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+
         $now = Carbon::now();
 
         $faker = Faker::create();
 
         $people = array();
 
-        for($i = 0; $i < 200; $i++) {
+        for ($i = 0; $i < 200; $i++) {
             $people[] = [
-                'name' => $faker -> firstName,
-                'surname' => $faker -> lastName,
-                'phone_number' => $faker -> phoneNumber,
-                'street' => $faker -> streetName,
-                'city' => $faker -> city,
-                'country' => $faker -> country,
+                'name' => $faker->firstName,
+                'surname' => $faker->lastName,
+                'phone_number' => $faker->phoneNumber,
+                'street' => $faker->streetName,
+                'city' => $faker->city,
+                'country' => $faker->country,
                 'created_at' => $now,
                 'updated_at' => $now,
             ];
         }
-
-        DB::table('people')->instert($people);
+        
+        DB::table('people')->insert($people);
     }
 }

@@ -8,8 +8,6 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up(): void
     {
@@ -17,18 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->string("surname");
-            $table->string("phone_number");
             $table->string("street");
             $table->string("city");
             $table->string("country");
+            $table->string("phone_number");
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down(): void
     {
